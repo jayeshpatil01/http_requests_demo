@@ -9,3 +9,11 @@ puts response.body
 response = HTTParty.get('https://jsonplaceholder.typicode.com/posts/1')
 parsed_response = JSON.parse(response.body)
 puts parsed_response['title']
+
+#  example post syntax
+# options = {
+#   body: {
+#     key: 'value'
+#   }
+# }
+# response = HTTParty.post('URL', options)
