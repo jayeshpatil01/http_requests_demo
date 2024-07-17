@@ -28,4 +28,23 @@ puts parsed_response['title']
 
  response = HTTParty.post('https://jsonplaceholder.typicode.com/posts', options)
  puts response.body
+
+ # checking the response status code and handle errors
+ options = {
+  body: {
+    title: 'foo',
+    body: 'bar',
+    userId: 1
+  }.to_json,
+  headers: { 'Content-Type' => 'application/json' }
+ }
+
+ response = HTTParty.post('https://jsonplaceholder.typicode.com/posts', options)
+
+ if response.code == 201
+  puts "Post created successfull"
+  puts response.body
+ else
+  puts "Failed to create a post. Error: #{response.message}"
+ end
  
