@@ -12,8 +12,8 @@ describe 'HTML parsing' do
 
   it 'extracts all headings from HTML content' do
     url = 'https://example.com'
-    heading = heading_extractor(url)
+    headings = heading_extractor(url)
   
-    expect(heading).to eq('Example Domain')
+    expect(headings).to include('Example Domain')
   end
 end
