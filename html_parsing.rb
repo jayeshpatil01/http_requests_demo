@@ -4,6 +4,8 @@ require 'rspec'
 
 url = 'https://example.com'
 def fetch_html(url)
+  response = HTTParty.get(url)
+  Nokogiri::HTML(response.body)
 end
 
 RSpec.describe "HTML Parsing" do
