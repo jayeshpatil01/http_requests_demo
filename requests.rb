@@ -47,4 +47,14 @@ puts parsed_response['title']
  else
   puts "Failed to create a post. Error: #{response.message}"
  end
- 
+
+
+ ### Accessing multiple endpoints
+urls = ["https://jsonplaceholder.typicode.com/posts/1", "https://jsonplaceholder.typicode.com/posts/2"]
+
+responses = urls.map { |url| HTTParty.get(url) }
+
+responses.each do |response|
+  parsed_response = JSON.parse(response.body)
+  puts parsed_response['title']
+end
