@@ -8,12 +8,16 @@ GEM
       multi_xml (>= 0.5.2)
     mini_mime (1.1.5)
     multi_xml (0.6.0)
+    nokogiri (1.16.6-arm64-darwin)
+      racc (~> 1.4)
+    racc (1.8.0)
 
 PLATFORMS
   arm64-darwin-23
 
 DEPENDENCIES
   httparty (~> 0.22.0)
+  nokogiri (~> 1.16, >= 1.16.6)
 
 BUNDLED WITH
    2.2.33
