@@ -17,4 +17,12 @@ describe 'HTML parsing' do
   
     expect(headings).to include('Example Domain')
   end
+
+  it 'extracts the links from the HTML content' do
+    url = 'https://example.com'
+    html = fetch_html(url)
+    links = extract_links(html)
+
+    expect(links).to include('https://www.iana.org/domains/example')
+  end
 end
