@@ -6,3 +6,6 @@ def fetch_html(url)
   response = HTTParty.get(url)
   Nokogiri::HTML(response.body)
 end
+
+def heading_extractor(url)
+end

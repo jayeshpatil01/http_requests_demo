@@ -9,4 +9,11 @@ describe 'HTML parsing' do
 
     expect(title).to eq('Example Domain')
   end
+
+  it 'extracts all headings from HTML content' do
+    url = 'https://example.com'
+    heading = heading_extractor(url)
+  
+    expect(heading).to eq('Example Domain')
+  end
 end
